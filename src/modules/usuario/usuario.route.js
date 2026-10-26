@@ -6,5 +6,5 @@ import * as usuarioCtr from "./usuario.controller.js";
 const router = Router();//uso el metodo router de exepresspara crear las rutas
 
 router.get("/usuarios", usuarioCtr.obtenerUsuarios);
-
+router.get("/usuarios/:id", usuarioCtr.ObtenerUsuarioId);
 export default router;
