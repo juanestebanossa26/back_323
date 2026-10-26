@@ -1,0 +1,7 @@
+#ARQUITECTURA COMPONENT BASED
+
+separacion por capas,evolucion modelo vista controlador
+aplica buenos princios de diseño:SOLID
+S:Single responsability principle 
+principio de responsabilidad unica = las funciones 
+solo deben hacer una acion 
