@@ -7,4 +7,7 @@ const router = Router();//uso el metodo router de exepresspara crear las rutas
 
 router.get("/usuarios", usuarioCtr.obtenerUsuarios);
 router.get("/usuarios/:id", usuarioCtr.ObtenerUsuarioId);
+router.post("/usuarios", usuarioCtr.crearUsuario);
+router.delete("/usuarios/:id", usuarioCtr.borrarUsuario);
+router.put("/usuarios/:id", usuarioCtr.actualizarUsuario);
 export default router;
