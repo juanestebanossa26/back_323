@@ -6,18 +6,33 @@
 import mysql from "mysql2/promise";//importamos la libreria 
 
 //cresmos una constante POOL
+// const pool = mysql.createPool({
+//   host: "localhost",
+//   port: 3306,
+//   user: "root",
+//   password: "",
+//   database: "app_usuario",
+//   waitForConnections: true,
+//   connectionLimit: 10,
+//   queueLimit: 0,
+//   timezone: "Z",
+//   dateStrings: true,
+//   decimalNumbers: true,
+// });
+
+//creamos una constante POOL
 const pool = mysql.createPool({
-  host: "localhost",
-  port: 3306,
-  user: "root",
-  password: "",
-  database: "app_usuario",
-  waitForConnections: true,
-  connectionLimit: 10,
-  queueLimit: 0,
-  timezone: "Z",
-  dateStrings: true,
-  decimalNumbers: true,
+  host: "localhost" || process.env.APP_HOST,
+  port: Number(process.env.MYSQL_ADDON_PORT) || 3306,
+  user: process.env.MYSQL_ADDON_USER || "root",
+  password: process.env.MYSQL_ADDON_PASSWORD || "",
+  database: process.env.MYSQL_ADDON_DB || "app_usuario",
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0,
+  timezone: "Z",
+  dateStrings: true,
+  decimalNumbers: true,
 });
 
 export default pool;

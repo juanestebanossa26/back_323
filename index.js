@@ -1,4 +1,5 @@
 import express from 'express';// importar libreria
+import "dotenv/config";
 import cors from 'cors';
 //creamos una instancia de la libreria express en la constante app
 const app=express();//metodo cosntructor de la libreria 
@@ -8,8 +9,11 @@ import rutausuario from "./src/modules/usuario/usuario.route.js";
 import rutaproducto from "./src/modules/productos/producto.route.js";
 
 // Middlewares
-app.use(express.json()); // Para que el servidor entienda JSON en el body
+app.use(express.urlencoded({ extended: true })); // Para que el servidor entienda JSON en el body
 app.use(cors());
+app.get("/", (req, res) => {
+res.send("¡Hola, mundo!");
+});
 //ruta para los endpoints
 app.use("/api", rutausuario);
 
