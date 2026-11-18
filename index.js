@@ -11,7 +11,7 @@ import rutaproducto from "./src/modules/productos/producto.route.js";
 app.use(express.json()); // Para que el servidor entienda JSON en el body
 app.use(cors());
 //ruta para los endpoints
-app.use("/api", rutaproducto);
+app.use("/api", rutausuario);
 
 
 
